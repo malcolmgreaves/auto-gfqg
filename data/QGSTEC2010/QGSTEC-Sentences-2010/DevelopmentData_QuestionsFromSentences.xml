@@ -1,0 +1,947 @@
+<dataset> 
+  <instance id="1"> 
+    <id>OpenLearn</id> 
+    <source>A180_1</source> 
+    <text>In Scotland, two battlefields, Culloden (1746) and Bannockburn (1314), stand out as iconic spaces, recognised not only by Scots but also by visitors.</text> 
+	<question type="where">
+			Where are Calloden and Bannickburn battlefields?  
+	</question>
+  </instance> 
+  <instance id="2"> 
+    <id>OpenLearn</id> 
+    <source>A103_5</source> 
+    <text>Following his horse-riding interests, he enlisted in 1915 in the Yeomanry, and was sent to the front in France in early 1916.</text> 
+	<question type="when">
+			When was he sent to the front?
+	</question>
+  </instance> 
+  <instance id="3"> 
+    <id>OpenLearn</id> 
+    <source>A103_5</source> 
+    <text>The poet Rudyard Kipling lost his only son in the trenches in 1915.</text> 
+	<question type="who">
+			Who lost his only son in the trenches in 1915?
+	</question>
+	<question type="when">
+			When did Rudyard Kipling lose his son?
+	</question>
+	<question type="how many">
+			How many sons did Rudyard Kipling have?
+	</question>
+  </instance> 
+  <instance id="4"> 
+    <id>OpenLearn</id> 
+    <source>A211_2</source> 
+    <text>Given that our desires often conflict, it would be impossible for us to live in a society which imposed no limits whatsoever on what we do.</text> 
+	<question type="what">
+			What should society impose, given that our desires often conflict?
+	</question>
+	<question type="yes/no">
+			Would it be possible for us to live in a society which imposed no limits whatsoever on what we do?
+	</question>
+  </instance> 
+  <instance id="5"> 
+    <id>OpenLearn</id> 
+    <source>AA309_1</source> 
+    <text>This shows the expansion of Rome's control through the third and second centuries BC, at the death of Augustus in AD 14, and at the end of Trajan's reign in AD 117.</text> 
+	<question type="when">
+			When did Augustus die?
+	</question>
+	<question type="who">
+			Who died in AD 14?
+	</question>
+  </instance> 
+  <instance id="6"> 
+    <id>OpenLearn</id> 
+    <source>A207_4</source> 
+    <text>Although Goya's first major engraved series, Los Caprichos, went briefly on sale before being withdrawn, his later series, Disasters of War, was not published during his lifetime.</text> 
+	<question type="who">
+			Los Caprichos was the first major engraved series of who?
+	</question>
+	<question type="yes/no">
+			Was Goya's engraved series, Disasters of War, published before his death? 
+	</question>
+  </instance> 
+  <instance id="7"> 
+    <id>OpenLearn</id> 
+    <source>MA290_3</source> 
+    <text>This method was much used by astronomers towards the end of the sixteenth century, particularly by the great Danish astronomer Tycho Brahe, who was visited by a young friend of Napier, John Craig, in 1590.</text> 
+	<question type="who">
+			Who was the great Danish astronomer that was visited by a young friend of Napier?
+	</question>
+	<question type="when">
+			When was this method much used by astronomers?
+	</question>
+  </instance> 
+  <instance id="8"> 
+    <id>OpenLearn</id> 
+    <source>AS208_1</source> 
+    <text>And later in the same century the Roman Emperor Marcus Aurelius dispatched a trading mission by land which communicated directly with Huan-ti, the emperor of China.</text> 
+	<question type="who">
+			Who did Marcus Aurelius's trading mission dispatched by land communicate with? 
+	</question>
+	<question type="which">
+			Huan-ti was the emperor of which country?
+	</question>
+  </instance> 
+  <instance id="9"> 
+    <id>OpenLearn</id> 
+    <source>AS208_1</source> 
+    <text>Archaelogical discoveries of Roman coins and a bronze lamp in the Gulf of Tongking and the Mekong Delta confirm the existence of trading links between China and the classical Mediterranean world.</text> 
+	<question type="where">
+			Where were Roman coins and a bronze lamp discovered? 
+	</question>
+	<question type="which">
+			Which trading links were confirmed by the archaelogical discoveries of Roman coins and a bronze lamp in the Gulf of Tongking and the Mekong Delta? 
+	</question>
+  </instance> 
+  <instance id="10"> 
+    <id>OpenLearn</id> 
+    <source>T175_1</source> 
+    <text>The unit for measuring frequency is the Hertz (Hz).</text> 
+	<question type="what">
+			What is the unit for measuring frequency?
+	</question>
+  </instance> 
+  <instance id="11"> 
+    <id>OpenLearn</id> 
+    <source>T180_3</source> 
+    <text>According to his official biography, Omidyar was seeking a way to use the Internet to create an efficient marketplace.</text> 
+	<question type="who">
+			Who was seeking a way to use the Internet to create an efficient marketplace?
+	</question>
+  </instance>   
+  <instance id="12"> 
+    <id>OpenLearn</id> 
+    <source>M263_1</source> 
+    <text>Digital computers cannot store real numbers exactly.</text> 
+	<question type="yes/no">
+			Can digital computers store real numbers exactly?
+	</question>
+  </instance> 
+  <instance id="13"> 
+    <id>OpenLearn</id> 
+    <source>M263_1</source> 
+    <text>ASC takes a character as input, and returns the integer giving the ASCII code of the input character.</text> 
+	<question type="what">
+			What does ASC return?
+	</question>
+  </instance> 
+  <instance id="14"> 
+    <id>OpenLearn</id> 
+    <source>M886_1</source> 
+    <text>It is vital to be worried about information security because much of the value of a business is concentrated in the value of its information.</text> 
+	<question type="why">
+			Why is it vital to be worried about information security?
+	</question>
+	<question type="what">
+			Where is much of the value of a business concentrated?
+	</question>
+  </instance> 
+  <instance id="15"> 
+    <id>OpenLearn</id> 
+    <source>DD208_3</source> 
+    <text>The chaos after Hurricane Katrina did not cause a civilizational collapse; it simply exposed and magnified one that had already occurred.</text> 
+	<question type="which">
+			The chaos after which hurricane did not cause a civilizational collapse?
+	</question>
+  </instance> 
+  <instance id="16"> 
+    <id>OpenLearn</id> 
+    <source>4ROAD_1</source> 
+    <text>Edinburgh reaches over the Firth of Forth with two great bridges, the photogenic Victorian Forth Rail Bridge and the slender 1960s Forth Road Bridge.</text> 
+	<question type="which">
+			Which city reaches over the Firth of Forth with two great bridges?
+	</question>
+	<question type="where">
+			Where do the Victorian Forth Rail Bridge and the Forth Road Bridges reach over the Firth of Forth?
+	</question>
+  </instance> 
+  <instance id="17"> 
+    <id>OpenLearn</id> 
+    <source>T838_1</source> 
+    <text>Plastics are further subdivided into thermoplastics and thermosets, the latter type being materials where the long chains are linked together by crosslinks, a feature they share with conventional vulcanized rubbers.</text> 
+	<question type="which">
+			Plastics can be subdivided into which two types?
+	</question>
+	<question type="which">
+			Which feature do thermosets share with conventional vulcanized rubbers? Plastics can be subdivided into which two types?
+	</question>
+  </instance> 
+  <instance id="18"> 
+    <id>OpenLearn</id> 
+    <source>DD100_7</source> 
+    <text>Just after Columbus sailed across the Atlantic Ocean the Pope, asserting the 'right' to control non-Christian lands, drew a line to separate the spheres of influence of Spain and Portugal.</text> 
+	<question type="who">
+			Who asserted the right to control non-Christian lands and drew a line to separate the spheres of influence of Spain and Portugal just after Columbus sailed across the Atlantic Ocean ? 
+	</question>
+	<question type="which">
+			The pope drew a line to separate the spheres of influence of which countries just after Columbus sailed across the Atlantic Ocean?
+	</question>
+  </instance> 
+  <instance id="19"> 
+    <id>OpenLearn</id> 
+    <source>GSG_5</source> 
+    <text>A pie chart is a way of presenting proportional data in the form of a circle, the 'pie'.</text> 
+	<question type="what">
+			What do we call the presentation of proportional data in the form of a circle?
+	</question>
+  </instance> 
+  <instance id="20"> 
+    <id>OpenLearn</id> 
+    <source>B822_1</source> 
+    <text>In the last century, the population of the planet has risen from approximately 1.65 billion to somewhere in excess of 6.5 billion.</text> 
+	<question type="how many">
+			What is the population size of the planet now?
+	</question>
+  </instance> 
+  <instance id="21"> 
+    <id>OpenLearn</id> 
+    <source>TL_CIT4</source> 
+    <text>Switzerland is the most famous example of direct democracy today, though the recall vote which led to Arnold Schwarzenegger becoming Governor of California is probably the biggest recent direct democracy event.</text> 
+	<question type="who">
+			Who is the governor of California?
+	</question>
+  </instance>     
+  <instance id="22"> 
+    <id>OpenLearn</id> 
+    <source>K202_2</source> 
+    <text>There are approximately 8,000 people and over 500 Chinese businesses across Northern Ireland.</text> 
+	<question type="how many">
+			Approximately how many Chinese businesses are there across Northern Ireland?
+	</question>
+	<question type="where">
+			There are approximately 8,000 people and over 500 Chinese businesses across where?
+	</question>
+	<question type="which">
+			Which nationality has over 500 businesses across Northern Ireland?
+	</question>
+  </instance>     
+  <instance id="23"> 
+    <id>OpenLearn</id> 
+    <source>E500_11</source> 
+    <text>During the Cretaceous (65-147 Ma) the whole Earth was up to +15°C warmer than at present, with tropical forests covering Antarctica, whereas during the Quaternary (~2 Ma) ice sheets spread across much of Europe and the mean surface temperature was up to 5°C colder than at present.</text> 
+	<question type="where">
+			Where did ice sheets spread  during the Quaternary?
+	</question>
+	<question type="when">
+			When was Quaternary?
+	</question>
+	<question type="what">
+			What was the mean surface temperature during the Cretaceous?
+	</question>
+  </instance>     
+  <instance id="24"> 
+    <id>OpenLearn</id> 
+    <source>S103_2</source> 
+    <text>Earthquakes mainly occur when the different blocks or plates that make up the Earth's surface move relative to each other (Figure 2a), causing distortion in the rock (Figure 2b).</text> 
+	<question type="why">
+			Why do earthquakes occur?	
+	</question>
+	<question type="what">
+			What happens when blocks or plates that make up the Earth's surface move relative to each other?
+	</question>
+  </instance>     
+  <instance id="25"> 
+    <id>OpenLearn</id> 
+    <source>S357_1</source> 
+    <text>Following the advent of the Hubble Space Telescope with its superior resolution of individual stars, it became possible in 1996 to extend Cepheid-based measurements as far as a galaxy known as M100, in the Virgo cluster, yielding a distance of 5.6 × 107 ly.</text> 
+	<question type="when">
+			When did it become possible to extend Cepheid-based measurements yielding a distance of 5.6 × 107 ly?
+	</question>
+	<question type="who">
+			 Who was the space telescope yielding a distance of 5.6 × 107 ly named after? 
+	</question>
+	<question type="how many">
+			How far is the galaxy known as M100 in Virgo cluster?
+	</question>
+  </instance>     
+  <instance id="26"> 
+    <id>OpenLearn</id> 
+    <source>W100_5</source> 
+    <text>The 1864 Geneva Convention followed, where 12 nation states agreed to respect the community of military hospitals and their staff, to care for sick and wounded soldiers whatever their nationality and to respect the emblem of the Red Cross.</text> 
+	<question type="how many">
+			How many nation states were signatories to the 1864 Geneva Convention?
+	</question>
+	<question type="when">
+			When did 12 nation states agree to respect the community of military hospitals and their staff, to care for sick and wounded soldiers whatever their nationality and to respect the emblem of the Red Cross? 
+	</question>
+	<question type="where">
+			Where did the convention in 1864 occur?
+	</question>
+	<question type="which">
+			The 12 nation states agreed to respect the emblem of which organisation? 
+	</question>
+  </instance>     
+  <instance id="27"> 
+    <id>OpenLearn</id> 
+    <source>E303_1</source> 
+    <text>The most notable attempts to make thorough descriptions of language occurred in the USA at the beginning of the twentieth century when anthropologists sought to describe North American Indian languages which were disappearing as English became more powerful.</text> 
+	<question type="what">
+			What group sought to describe North American Indian languages which were disappearing as English became more powerful? 
+	</question>
+	<question type="where">
+			Where was the most notable attempt made to make thorough descriptions of languages?
+	</question>
+	<question type="which">
+			Which languages were disappearing as English became more powerful?
+	</question>
+	<question type="when">
+			When were Northern American Indian languages disappearing as English became more powerful?
+	</question>
+  </instance>     
+  <instance id="28"> 
+    <id>OpenLearn</id> 
+    <source>TA212_2</source> 
+    <text>Striking a tuning fork causes its prongs to vibrate, but very little sound is produced because the prongs move back and forth through the air without particularly disturbing it.</text> 
+	<question type="why">
+			Why is very little sound produced when striking a tuning fork? 
+	</question>
+  </instance>     
+  <instance id="29"> 
+    <id>OpenLearn</id> 
+    <source>A297_1</source> 
+    <text>When William the Conqueror and his Normans came to Britain in the eleventh century, a vast number of words, derived both from Norman French and from written Latin, entered English.</text> 
+	<question type="who">
+			Who came to Britain in the eleventh century?
+	</question>
+	<question type="where">
+			Where did William the Conqueror and his Normans come to in the eleventh century? 
+	</question>
+	<question type="where">
+			Where were a vast number of words that entered Englihs in the eleventh century derived from
+	</question>
+	<question type="when">
+			When did the vast number of words derived both from Norman French and from written Latin enter English? 
+	</question>
+  </instance>     
+  <instance id="30"> 
+    <id>OpenLearn</id> 
+    <source>A207_5</source> 
+    <text>In a similar mood of aggrieved self-righteousness and revolutionary exultation came the fall of the Bastille, the medieval fortress and prison of Paris, on 14 July 1789.</text> 
+	<question type="when">
+			When did Bastille fall?
+	</question>
+	<question type="where">
+			Where was the medieval fortress and prison Bastille?
+	</question>
+  </instance>     
+  <instance id="31"> 
+    <id>OpenLearn</id> 
+    <source>AA309_2</source> 
+    <text>The ancient city of Thugga is often known by its modern name, Dougga.</text> 
+	<question type="what">
+			What is the modern name of ancient city of Thugga?
+	</question>
+  </instance> 
+  <instance id="32"> 
+    <id>Wikipedia</id> 
+    <source>Star_Wars</source> 
+    <text>The first film in the franchise was originally released on May 25, 1977, by 20th Century Fox, and became a worldwide pop culture phenomenon, spawning two immediate sequels, released at three-year intervals.</text> 
+	<question type="when">
+			When was the first film in the franchise originally released?
+	</question>
+	<question type="who">
+			Who released the first film in the franchise?
+	</question>
+  </instance> 
+  <instance id="33"> 
+    <id>Wikipedia</id> 
+    <source>James_Bond_(film_series)</source> 
+    <text>The James Bond film series are film adaptations inspired by Ian Fleming's novels about the fictional MI6 agent James Bond (codename 007).</text> 
+	<question type="who">
+			The James Bond film series are inspired by which author's novels?
+	</question>
+	<question type="what">
+			What are Iam Fleming's novels about?
+	</question>
+  </instance> 
+  <instance id="34"> 
+    <id>Wikipedia</id> 
+    <source>Michael_Caine</source> 
+    <text>Caine's acting career began in Horsham, Sussex.</text> 
+	<question type="where">
+			Where did Caine's acting career begin?
+	</question>
+	<question type="who">
+			Who's acting career began in Horsham, Sussex?
+	</question>
+	<question type="what">
+			What was Caine's career?
+	</question>
+  </instance> 
+  <instance id="35"> 
+    <id>Wikipedia</id> 
+    <source>European_colonization_of_the_Americas</source> 
+    <text>After 1840, the Irish arrived in large numbers, in part because of the famines of the 1840s.</text> 
+	<question type="which">
+			Which nationality arrived in great numbers after 1840?
+	</question>
+	<question type="when">
+			When did the Irish arrive in great numbers?
+	</question>
+  </instance> 
+  <instance id="36"> 
+    <id>Wikipedia</id> 
+    <source>Ireland</source> 
+    <text>The Republic of Ireland covers five-sixths of the island.</text> 
+	<question type="how many">
+			How much of the island does the Republic of Ireland cover?
+	</question>
+	<question type="which">
+			Five-sixths of the island are covered by which republic?
+	</question>
+  </instance> 
+  <instance id="37"> 
+    <id>Wikipedia</id> 
+    <source>Atlantic_Ocean</source> 
+    <text>With a total area of about 106.4 million square kilometres (41.1 million square miles), it covers approximately one-fifth of the Earth's surface and about one-quarter of its water surface area.</text> 
+	<question type="how many">
+			How much of the Earth's surface does it cover?
+	</question>
+  </instance> 
+  <instance id="38"> 
+    <id>Wikipedia</id> 
+    <source>J._R._R._Tolkien</source> 
+    <text>Tolkien had one sibling, his younger brother, Hilary Arthur Reuel, who was born on 17 February 1894.</text> 
+	<question type="when">
+			When was his younger brother born?
+	</question>
+	<question type="who">
+			Who was born on 17th February 1894?
+	</question>
+  </instance> 
+  <instance id="39"> 
+    <id>Wikipedia</id> 
+    <source>Sun</source> 
+    <text>The Sun is a G-type main sequence star comprising about 99.86% of the total mass of the Solar System.</text> 
+	<question type="which">
+			Which type of star is the Sun?
+	</question>
+	<question type="how many">
+			What percentage of the total mass of the solar system does the Sun comprise of?
+	</question>
+	<question type="what">
+			Of what does The Sun comprise about 99.86% of the total mass of?
+	</question>
+  </instance> 
+  <instance id="40"> 
+    <id>Wikipedia</id> 
+    <source>Hydrogen</source> 
+    <text>The first hydrogen-filled balloon was invented by Jacques Charles in 1783.</text> 
+	<question type="who">
+			Who invented the first hydrogen-filled balloon?
+	</question>
+	<question type="when">
+			When was the first hydrogen-filled balloon invented?
+	</question>
+  </instance> 
+  <instance id="41"> 
+    <id>Wikipedia</id> 
+    <source>Greenhouse_gas</source> 
+    <text>Human activities since the start of the industrial era around 1750 have increased the levels of greenhouse gases in the atmosphere.</text> 
+	<question type="when">
+			Since when have human activities increased the levels of greenhouse gases in the atmosphere? 
+	</question>
+	<question type="where">
+			Where have  Human activities since the start of the industrial era  increased the levels of greenhouse gases?
+	</question>
+  </instance> 
+  <instance id="42"> 
+    <id>Wikipedia</id> 
+    <source>Battery_(electricity)</source> 
+    <text>Since the invention of the first Voltaic pile in 1800 by Alessandro Volta, the battery has become a common power source for many household and industrial applications.</text> 
+	<question type="who">
+			Who invented the first Voltaic pile in 1800?
+	</question>hich Latin word is the word "lava" derived from?
+	<question type="when">
+			When was the first Voltaic pile invented?
+	</question>
+	<question type="which">
+			The battery has become a common power source for which applications?
+	</question>
+  </instance> 
+  <instance id="43"> 
+    <id>Wikipedia</id> 
+    <source>List_of_most_common_surnames</source> 
+    <text>Based on the Japanese surname Dictionary issued in July 1996, there are 291,129 different surnames in Japan.</text> 
+	<question type="when">
+			When was the Japanese surname Dictionary issued?
+	</question>
+	<question type="how many">
+			How many different surnames are there in Japan?
+	</question>
+	<question type="which">
+			Which country has 291,129 different surnames?
+	</question>
+  </instance> 
+  <instance id="44"> 
+    <id>Wikipedia</id> 
+    <source>Polar_bear</source> 
+    <text>An adult male weighs around 350 - 680 kg (770 - 1,500 lb), while an adult female is about half that</text> 
+	<question type="how many">
+			How much does an adult male weigh?
+	</question>
+  </instance> 
+  <instance id="45"> 
+    <id>Wikipedia</id> 
+    <source>Lava</source> 
+    <text>The word "lava" comes from Italian, and is probably derived from the Latin word labes which means a fall or slide.</text> 
+	<question type="which">
+			Which Latin word is the word "lava" derived from? 
+	</question>
+  </instance> 
+  <instance id="46"> 
+    <id>Wikipedia</id> 
+    <source>Igneous_rock</source> 
+    <text>Two important variables used for the classification of igneous rocks are particle size, which largely depends upon the cooling history, and the mineral composition of the rock.</text> 
+	<question type="which">
+			Which two important variables are used for the classification of igneous rocks?
+	</question>
+  </instance> 
+  <instance id="47"> 
+    <id>Wikipedia</id> 
+    <source>United_Nations</source> 
+    <text>The UN's most visible public figure is the Secretary-General, currently Ban Ki-moon of South Korea, who attained the post in 2007.</text> 
+	<question type="which">
+			Which organisation's most visible public figure is currently Ban Ki-moon of South Korea?
+	</question>
+	<question type="who">
+			Who is the current Secretary-General of the UN?
+	</question>
+	<question type="where">
+			Where is the Secretary-General of the UN from?
+	</question>
+	<question type="when">
+			When did Ban Ki-Moon attain the post of the Secretary-General?
+	</question>
+  </instance> 
+  <instance id="48"> 
+    <id>Wikipedia</id> 
+    <source>Vienna</source> 
+    <text>Vienna is the capital of the Republic of Austria and one of the nine states of Austria.</text> 
+	<question type="what">
+			What is the capital of the Republic of Austria?
+	</question>
+	<question type="how many">
+			How many states does Austria have?
+	</question>
+  </instance> 
+  <instance id="49"> 
+    <id>Wikipedia</id> 
+    <source>World_Bank</source> 
+    <text>The World Bank is one of two institutions created at the Bretton Woods Conference in 1944.</text> 
+	<question type="when">
+			When did the Bretton Woods Conference take place?
+	</question>
+	<question type="where">
+			Where was the institution of the World Bank created?
+	</question>
+	<question type="how many">
+			How many institutions were created at the Bretton Woods Conference in 1944?
+	</question>
+	<question type="what">
+			What was created at the Bretton Woods Conference in 1944?
+	</question>
+  </instance> 
+  <instance id="50"> 
+    <id>Wikipedia</id> 
+    <source>Ford_Motor_Company</source> 
+    <text>The Ford Motor Company was launched in a converted factory in 1903 with $28,000 in cash from twelve investors, most notably John and Horace Dodge (who would later found their own car company).</text> 
+	<question type="when">
+			When was the Ford Motor Company launched?
+	</question>
+	<question type="how many">
+			How many investors did the cash come from?
+	</question>
+	<question type="who">
+			Who were the most notable investors?
+	</question>
+	<question type="which">
+			Which company was launched in a converted factory in 1903?
+	</question>
+  </instance> 
+  <instance id="51"> 
+    <id>Wikipedia</id> 
+    <source>Late-2000s_recession</source> 
+    <text>In March 2009, Blackstone Group CEO Stephen Schwarzman said that up to 45% of global wealth had been destroyed in little less than a year and a half.</text> 
+	<question type="when">
+			When did Stephen Schwarzman say that up to 45% of global wealth had been destroyed in little less than a year and a half?
+	</question>
+	<question type="who">
+			Who is the CEO of Blackstone Group?
+	</question>
+	<question type="which">
+			Which position did Stephen Schwarzman hold in Blackstone Group?
+	</question>
+	<question type="how many">
+			In how many years did Stephen Schwarzman say that up to 45% of global wealth had been destroyed? 
+	</question>
+	<question type="what">
+			What did Stephen Schwarzman say had been destroyed in little less than a year and a half?
+	</question>
+  </instance> 
+  <instance id="52"> 
+    <id>Wikipedia</id> 
+    <source>Irish_Times</source> 
+    <text>The current editor is Geraldine Kennedy, who succeeded Conor Brady in 2002.</text> 
+	<question type="when">
+			When did Geraldine Kennedy succeed Conor Brady?
+	</question>
+	<question type="who">
+			Who is the current editor?
+	</question>
+	<question type="what">
+			What is the occupation of Geraldine Kennedy?
+	</question>
+  </instance> 
+  <instance id="53"> 
+    <id>Wikipedia</id> 
+    <source>Snowdrop</source> 
+    <text>Although it is often thought of as a British native wild flower, or to have been brought to the British Isles by the Romans, it was probably introduced around the early sixteenth century.</text> 
+	<question type="which">
+			It a native wild flower of which country?
+	</question>
+	<question type="who">
+			Who brought it to the British Isles?
+	</question>
+	<question type="when">
+			When was it introduced?
+	</question>
+	<question type="what">
+			What is it often thought of as?
+	</question>
+  </instance> 
+  <instance id="54"> 
+    <id>Wikipedia</id> 
+    <source>Netherlands_cabinet_Balkenende-4</source> 
+    <text>The cabinet succeeded the third Balkenende cabinet following the 2006 election, and was installed by Queen Beatrix on 22 February 2007.</text> 
+	<question type="when">
+			When was the cabinet installed?
+	</question>
+	<question type="who">
+			Who installed the cabinet?
+	</question>
+	<question type="what">
+			The cabinet succeeded the third Balkenende cabinet following what?
+	</question>
+  </instance> 
+  <instance id="55"> 
+    <id>Wikipedia</id> 
+    <source>Moray_eel</source> 
+    <text>The largest in terms of total mass is the giant moray (Gymnothorax javanicus), which reaches almost 3 metres (9.8 ft) and can weigh over 36 kilograms (79 lb).</text> 
+	<question type="how many">
+			How long can the giant moray reach?
+	</question>
+  </instance> 
+  <instance id="56"> 
+    <id>YahooAnswers</id> 
+    <source>http://uk.answers.yahoo.com/question/index;_ylt=AlfmeibTfeRNGj5uczpzaRhJBgx.;_ylv=3?qid=20100127170755AAEdtGy</source> 
+    <text>Hence, sometimes, as we age and the slippery tissue in between our joint breaks down and wears away, bone spurs may form in along the edges of the joints.</text> 
+	<question type="why">
+			Why may bone spurs form along the edges of the joints?
+	</question>
+	<question type="where">
+			Where may bone spurs form?
+	</question>
+  </instance> 
+  <instance id="57"> 
+    <id>YahooAnswers</id> 
+    <source>http://uk.answers.yahoo.com/question/index;_ylt=AuOmX1gwKomkBPHQAVqe7CBJBgx.;_ylv=3?qid=20081004153224AA5xaqn</source> 
+    <text>Prevent sandbur from returning to these areas by applying a pre-emergent herbicide containing trifluralin or eptam in early spring.</text> 
+	<question type="when">
+			When should a pre-emergent herbicide be applied? 
+	</question>
+	<question type="what">
+			What can be prevented by applying a pre-emergent herbicide?
+	</question>
+  </instance> 
+  <instance id="58"> 
+    <id>YahooAnswers</id> 
+    <source>http://uk.answers.yahoo.com/question/index;_ylt=ArxiW96fDrr.6bh1CoDBrkpJBgx.;_ylv=3?qid=20090228132218AAivbWR</source> 
+    <text>I'm sure their fans would rather stay up and not win the UEFA Cup than be relegated and win the UEFA Cup.</text> 
+	<question type="who">
+			Who would rather stay up and not win the UEFA Cup than be relegated and win the UEFA Cup?
+	</question>
+	<question type="what">
+			What would their fans rather not win than be relegated and win? 
+	</question>
+  </instance> 
+  <instance id="59"> 
+    <id>YahooAnswers</id> 
+    <source>http://uk.answers.yahoo.com/question/index;_ylt=Al4UuTEYqyj443dLSaCOO45JBgx.;_ylv=3?qid=20070919111927AAnIpsz</source> 
+    <text>You can buy a data transfer cable about 10 pounds $15 from online shops.</text> 
+	<question type="how many">
+			How much can you buy a data transfer cable for from online shops?
+	</question>
+	<question type="where">
+			Where can you buy a data transfer cable for about 10 pounds?
+	</question>
+	<question type="what">
+			What can you buy for about 10 pounds from online shops?
+	</question>
+  </instance> 
+  <instance id="60"> 
+    <id>YahooAnswers</id> 
+    <source>http://uk.answers.yahoo.com/question/index;_ylt=An2Nm0fIxCH8Cq5OT8I2DONJBgx.;_ylv=3?qid=20070124193102AAH6a95</source> 
+    <text>If you shoot a mid-size photo with "normal" resolution, you might even be able to get about a thousand on the card.</text> 
+	<question type="how many">
+			If you shoot a mid-size photo with "normal" resolution, how many might you be able to get on the card?
+	</question>
+	<question type="what">
+			What might you be able to get about a thousand of on the card?
+	</question>
+	<question type="which">
+			With which size photo with "normal" resolution might you be able to get about a thousand on the card?
+	</question>
+  </instance> 
+  <instance id="61"> 
+    <id>YahooAnswers</id> 
+    <source>http://uk.answers.yahoo.com/question/index;_ylt=Arj32AE2PedNkhITo.TFIEFJBgx.;_ylv=3?qid=20080505184613AAx1pYi </source> 
+    <text>Unix is the best memory management Operating system , there are many derivatives of Unix , Linux is the new kid on the block. </text> 
+	<question type="which">
+			Which operating system is the best memory management Operating system?
+	</question>
+	<question type="what">
+			What operating system is Linux derivative of?
+	</question>
+  </instance> 
+  <instance id="62"> 
+    <id>YahooAnswers</id> 
+    <source>http://uk.answers.yahoo.com/question/index;_ylt=Ah8CcEG4d6q_4olasOMpcHxJBgx.;_ylv=3?qid=20090225224308AAJAMop</source> 
+    <text>The integrated Intel chipset video cards will not give you the performance you want out of WoW even with 4 GB of RAM.</text> 
+	<question type="which">
+			Which manufacturer's chipset video cards will not give you the performance you want out of WoW?
+	</question>
+	<question type="how many">
+			The integrated Intel chipset video cards will not give you the performance you want out of WoW even with how much RAM?
+	</question>
+  </instance> 
+  <instance id="63"> 
+    <id>YahooAnswers</id> 
+    <source>http://uk.answers.yahoo.com/question/index;_ylt=AhshHV2v_ENy3d51gmGdhzdJBgx.;_ylv=3?qid=20090502090216AAUeK2h</source> 
+    <text>DNA research shows that the inhabitants of Ireland came from Spain in prehistoric times.</text> 
+	<question type="what">
+			What shows that inhabitants of Ireland came from Spain in prehistoric times?
+	</question>
+	<question type="where">
+			Where did the inhabitants of Ireland come from according to the DNA research ?
+	</question>
+	<question type="which">
+			Which nations came from Spain in prehistoric times?
+	</question>
+	<question type="when">
+			DNA research shows that the inhabitants of Ireland came from Spain when?
+	</question>
+  </instance> 
+  <instance id="64"> 
+    <id>YahooAnswers</id> 
+    <source>http://answers.yahoo.com/question/index;_ylt=AuePxc_nAjW4wH_AMrgg8t4jzKIX;_ylv=3?qid=20080225152648AA4nm73</source> 
+    <text>I'll say that Eiffel Tower helped Paris to become number 1 romantic place.</text> 
+	<question type="what">
+			What helped Paris to become number 1 romantic place?
+	</question>
+	<question type="where">
+			Where is the Eiffel Tower?
+	</question>
+	<question type="which">
+			Which place did the Eiffel Tower help to become number 1 romantic place?
+	</question>
+  </instance> 
+  <instance id="65"> 
+    <id>YahooAnswers</id> 
+    <source>http://answers.yahoo.com/question/index;_ylt=AnSFZCWHNaPkG52xDxOmrXEjzKIX;_ylv=3?qid=20080924095447AA5hhab</source> 
+    <text>The Mars rover's solar panels only provide enough power to move less than 1 MPH and go a maximum distance of a few hundred feet in a whole day.</text> 
+	<question type="what">
+			What provides power for Mars rover?
+	</question>
+	<question type="how many">
+			What distance and speed do solar panels provide enough power for in a day?
+	</question>
+  </instance> 
+  <instance id="66"> 
+    <id>YahooAnswers</id> 
+    <source>http://answers.yahoo.com/question/index;_ylt=ArlwThYo7kBbfy.Vwrbaf1gjzKIX;_ylv=3?qid=20090206140947AAhPM2R</source> 
+    <text>People are more likely to be attacked by a captive killer whale than be attacked by a wild one.</text> 
+	<question type="yes/no">
+			Are people more likely to be attacked by a captive killer whale than be attacked by a wild one?
+	</question>
+  </instance> 
+  <instance id="67"> 
+    <id>YahooAnswers</id> 
+    <source>http://answers.yahoo.com/question/index;_ylt=AnK.iPrdIlfDgYWhEp7GvdojzKIX;_ylv=3?qid=20090128205319AAovgmX</source> 
+    <text>It is also very likely that your laptop is not capable of working with Windows XP as a result of insufficient system resources on your laptop which is one reason why your laptop is not preforming at its optimum proficiency.</text> 
+	<question type="why">
+			Why is it likely that your laptop is not capable of working with Windows XP?
+	</question>
+	<question type="which">
+			It is likely that your laptop is not capable of working with Windows XP?
+	</question>
+  </instance> 
+  <instance id="68"> 
+    <id>YahooAnswers</id> 
+    <source>http://answers.yahoo.com/question/index;_ylt=AqdYwav6SWdpfQeumzdfuHwjzKIX;_ylv=3?qid=20061118202758AAPga4p</source> 
+    <text>Feed with a high first number fertilizer in the spring.</text> 
+	<question type="when">
+			When should the high first number fertilizer be fed?
+	</question>
+  </instance> 
+  <instance id="69"> 
+    <id>YahooAnswers</id> 
+    <source>http://answers.yahoo.com/question/index;_ylt=AiRTUKKwmloRGndRExt5zUYjzKIX;_ylv=3?qid=20090712192236AA2ytWz</source> 
+    <text>I used to be a hair dresser so continue on with the straightening and get it trimmed an inch or two every few weeks and keep straightening and on and on with that routine.</text> 
+	<question type="when">
+			How often should it be trimmed an inch or two?
+	</question>
+	<question type="what">
+			What should continue?
+	</question>
+	<question type="how many">
+			How much should it be trimmed every few weeks?
+	</question>
+  </instance> 
+  <instance id="70"> 
+    <id>YahooAnswers</id> 
+    <source>http://answers.yahoo.com/question/index;_ylt=Auwz6qw5wsnRj7tXTXz53lztxQt.;_ylv=3?qid=20100219203419AAhXX8P</source> 
+    <text>I do not think Australia is infamous for poor medical facilities so I would not be worried about paralysis.</text> 
+	<question type="where">
+			Where is not thought of as infamous for poor medical facilities?
+	</question>
+	<question type="why">
+			Why would you not be worried about paralysis?
+	</question>
+	<question type="what">
+			What would you not be worried about?
+	</question>
+  </instance> 
+  <instance id="71"> 
+    <id>YahooAnswers</id> 
+    <source>http://answers.yahoo.com/question/index;_ylt=AivINzpRh_ZlYjIGqTzSbZnsy6IX;_ylv=3?qid=20100217081646AAaITAM&amp;show=7#profile-info-IaN8ASx3aa</source> 
+    <text>Rabies is not contracted by the consumption of food, regardless of whether it is clean or not.</text> 
+	<question type="yes/no">
+			Is rabies  contracted by the consumption of food? 
+	</question>
+	<question type="what">
+			What is not contracted by the consumption of food?
+	</question>
+  </instance> 
+  <instance id="72"> 
+    <id>YahooAnswers</id> 
+    <source>http://answers.yahoo.com/question/index;_ylt=AnSVq7.aQXAN6wY.x.Ih0cCoDX1G;_ylv=3?qid=20100219215352AA4Almo</source> 
+    <text>Montenegro is a potential candidate for membership in the European Union and uses the Euro. </text> 
+	<question type="which">
+			Which country is a potential candidate for membership in the European Union?
+	</question>
+	<question type="what">
+			Montenegro is a potential candidate for what?
+	</question>
+  </instance> 
+  <instance id="73"> 
+    <id>YahooAnswers</id> 
+    <source>http://answers.yahoo.com/question/index;_ylt=AtCV2Wk0QC4ImoeDzGgXigeoDX1G;_ylv=3?qid=20100217212243AALI3Cv</source> 
+    <text>Here in Italy most students take some English classes, but other than language classes, lessons are in Italian here and in the native tongue in other countries.</text> 
+	<question type="where">
+			Where do most students take some English classes?
+	</question>
+	<question type="yes/no">
+			Are lessons in Italian in Italy?
+	</question>
+	<question type="what">
+			What do most students take in Italy?
+	</question>
+  </instance> 
+  <instance id="74"> 
+    <id>YahooAnswers</id> 
+    <source>http://answers.yahoo.com/question/index;_ylt=An338PJR3zBDgpzT8GzYPVIjzKIX;_ylv=3?qid=20090816100655AAv95mQ</source> 
+    <text>Yes, all instruments for Guitar Hero are compatible with all Rock Band games, and vice versa.</text> 
+	<question type="yes/no">
+			Are all instruments for Guitar Hero are compatible with all Rock Band games? 
+	</question>
+	<question type="which">
+			Which instruments are compatible with all Rock Band games?
+	</question>
+  </instance> 
+  <instance id="75"> 
+    <id>YahooAnswers</id> 
+    <source>http://answers.yahoo.com/question/index;_ylt=Ajvaaj4G9GhKfpC0KJr.wJEjzKIX;_ylv=3?qid=20090307163023AAnwgXI</source> 
+    <text>Also, a good book about Queen is, As It Began which is cowritten by Jacky Gunn Smith who is the president of the Queen International Fan Club.</text> 
+	<question type="who">
+			Who is As It Began cowritten by?
+	</question>
+	<question type="what">
+			What role has Jacky Gunn Smith got with the Queen International Fan Club?
+	</question>
+	<question type="which">
+			Which rock group is As It Began about?
+	</question>
+  </instance> 
+  <instance id="76"> 
+    <id>YahooAnswers</id> 
+    <source>http://answers.yahoo.com/question/index;_ylt=AiHqIlSLAEEjv6WB46PkpNSD6xR.;_ylv=3?qid=20100220105513AAI5ZVg</source> 
+    <text>Kleenoff - you had to wear gloves because it contained caustic soda or something</text> 
+	<question type="why">
+			Why did you have to wear gloves?
+	</question>
+	<question type="what">
+			What did it contain?
+	</question>
+  </instance> 
+  <instance id="77"> 
+    <id>YahooAnswers</id> 
+    <source>http://answers.yahoo.com/question/index;_ylt=AoWVWMdwLigujQeRxf0LHWCD6xR.;_ylv=3?qid=20100220015521AA0slZo</source> 
+    <text>In Australia you no longer can buy the ordinary incandescent globes, as you probably already know.</text> 
+	<question type="where">
+			Where can you no longer buy the ordinary incandescent globes?
+	</question>
+	<question type="yes/no">
+			Can you buy the ordinary incandescent globes in Australia?
+	</question>
+	<question type="what">
+			What can you no longer buy in Australia?
+	</question>
+  </instance> 
+  <instance id="78"> 
+    <id>YahooAnswers</id> 
+    <source>http://answers.yahoo.com/question/index;_ylt=AiHqIlSLAEEjv6WB46PkpNQUxgt.;_ylv=3?qid=20100220200548AAEoFN0</source> 
+    <text>Their ancestors migrated through the middle east and near east into Europe,beginning some 30-40 thousand years ago.</text> 
+	<question type="who">
+			Who migrated through the middle east and near east into Europe?
+	</question>
+	<question type="where">
+			Where did their ancestors migrate through?
+	</question>
+	<question type="when">
+			When did their ancestors begin migrating through the middle ease and near east into Europe?
+	</question>
+  </instance> 
+  <instance id="79"> 
+    <id>YahooAnswers</id> 
+    <source>http://answers.yahoo.com/question/index;_ylt=AmaicfhO0lYTiFRJiPJmKSkX53NG;_ylv=3?qid=20100221064822AAIUoFx</source> 
+    <text>Sell your wii and get a PS3, you will find how pathetic the wii is in a short time.</text> 
+	<question type="what">
+			What will you find out is pathetic in a short time?
+	</question>
+  </instance> 
+  <instance id="80"> 
+    <id>YahooAnswers</id> 
+    <source>http://answers.yahoo.com/question/index;_ylt=AoWVWMdwLigujQeRxf0LHWDzxQt.;_ylv=3?qid=20100219194310AANGbcY</source> 
+    <text>There are several 'theme parks' in the UK.</text> 
+	<question type="what">
+			What are there several of in the UK?
+	</question>
+	<question type="where">
+			Where are there several 'theme parks'?
+	</question>
+	<question type="yes/no">
+			Are there several 'theme parks' in the UK?
+	</question>
+  </instance> 
+  <instance id="81"> 
+    <id>YahooAnswers</id> 
+    <source>http://answers.yahoo.com/question/index;_ylt=AoWVWMdwLigujQeRxf0LHWD2xQt.;_ylv=3?qid=20100220050756AA7LVdX</source> 
+    <text>Usually the dealer has to hit until they get 17.</text> 
+	<question type="how many">
+			The dealer has to hit until they get how many?
+	</question>
+  </instance> 
+</dataset>
