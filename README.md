@@ -1,9 +1,9 @@
 # auto-gfqg
 Automatic Gap-Fill Question Generation.
 
-This work is a proof-of-concept reimplementation of the ideas behind [RevUp](http://oa.upm.es/42192/1/INVE_MEM_2015_226779.pdf). It was done under limited time and finnancial constraints as an intellectual exercise. The ideas implemented here are largely the same as those in the RevUp paper. Of note are two differences. The first is the the use of the biterm topic model instead of the RBM described in RevUp. Second is the use of word and latent topic vectors to perform the gap-filling and distractor search instead of using supervised machine learning model.
+This work is a proof-of-concept reimplementation of the ideas behind [RevUp](http://oa.upm.es/42192/1/INVE_MEM_2015_226779.pdf). The ideas implemented here are largely the same as those in the paper. There are two notable differences. First, we the use a [biterm topic model](https://github.com/xiaohuiyan/BTM) instead of the [deep autoencoder topic model](https://www.prhlt.upv.es/workshops/iwes15/pdf/iwes15-kumar-d'haro.pdf). Second, we use topic-weighted word vectors to perform the gap-phrase selection. In contrast, RevUp uses a supervised model trained on human judegements via Mechanical Turk.  
 
-The [conclusions and future work](doc/conclusions_future_work.md) file summarizes thoughts and findings for this challenge.
+The [conclusions and future work](doc/conclusions_future_work.md) file summarizes thoughts and findings of this proof-of-concept (poc).
 
 Before attempting to run and programs here, please read through the documentation and ensure that your machine has the [necessary pre-reqs](doc/software_prereqs.md).
 
