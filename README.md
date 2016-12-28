@@ -1,5 +1,6 @@
 # auto-gfqg
-Automatic Gap-Fill Question Generation.
+
+This **Automatic Gap-Fill Question Generation** system creates multiple choice, fill-in-the-blank questions from text corpora. Textbooks, factoid archives, news articles, reports, lecture notes, legal proceedings -- the minimum viable input is a small to moderate sized collection of coherent, well-formed english.
 
 This work is a proof-of-concept reimplementation of the ideas behind [RevUp](http://oa.upm.es/42192/1/INVE_MEM_2015_226779.pdf). The ideas implemented here are largely the same as those in the paper. There are two notable differences. First, we the use a [biterm topic model](https://github.com/xiaohuiyan/BTM) instead of the [deep autoencoder topic model](https://www.prhlt.upv.es/workshops/iwes15/pdf/iwes15-kumar-d'haro.pdf). Second, we use topic-weighted word vectors to perform the gap-phrase selection. In contrast, RevUp uses a supervised model trained on human judegements via Mechanical Turk.  
 
@@ -22,7 +23,6 @@ The following numbered list roughly describes the system's sequential operation:
 4. Use the learned BTM word-topic conditional probabilites and intuitive heuristics to score all sentences from the corpus. Then, threshold and eliminate low-scoring sentences, creating gap-fill question candidates. See [score and generate gap fill question candidates](doc/score_and_generate_gap_fill_questions_candidates.md) for more.
 
 5. For each candidate sentence, choose a gap word. Removing the gap word from the sentence creates the fill-in-the-blank question (i.e. the gap word is the correct answer). Additionally, discover appropriate distractors for the chosen gap word. Distractors are semantically related, but ultimately different from the gap phrase (i.e. these are the incorrect answers). See [finding gap words and distractors](doc/find_gaps_and_distractors.md) for more.
-
 
 All of the Scala programs have built-in help support. Invoke them with "-h" or "--help" to see information about how to use each program.
 
