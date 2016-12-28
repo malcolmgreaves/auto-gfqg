@@ -9,11 +9,9 @@ First, we use the topic model's word probabilites to create a weighted word-vect
 
 Next, we can use one of three programs to appropriate find gap words and distractors for each high-scoring sentence. Using the topic vectors, the BTM model, the word vectors, and the scored sentences, our options are to invoke one of:
 
-1. [`GapWordAndDistractorSelection`](../src/main/scala/agfqg/GapWordAndDistractorSelection.scala)
-
-2.[`VocabFilterGapWordAndDistractorSelection`](../src/main/scala/agfqg/VocabFilterGapWordAndDistractorSelection.scala)
-
-3. [`NlpAwareGapWordAndDistractorSelection`](../src/main/scala/agfqg/NlpAwareGapWordAndDistractorSelection.scala)
+* [`GapWordAndDistractorSelection`](../src/main/scala/agfqg/GapWordAndDistractorSelection.scala): Topic-weighted word vector method for gap-word selection.
+* [`VocabFilterGapWordAndDistractorSelection`](../src/main/scala/agfqg/VocabFilterGapWordAndDistractorSelection.scala): + limits distractors to within-corpus-vocabulary.
+* [`NlpAwareGapWordAndDistractorSelection`](../src/main/scala/agfqg/NlpAwareGapWordAndDistractorSelection.scala): + limits gap-words and distractors based upon part-of-speech relationships.
 
 All programs find gap words by choosing the word in each sentence whose word vector is closest to the weighted sum of the top 3 topic vectors for the sentence. Only the third program, `NlpAwareGapWordAndDistractorSelection`, restricts gap words to have a noun or verb part-of-speech tag.
 
