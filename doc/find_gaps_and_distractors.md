@@ -11,9 +11,9 @@ Next, we can use one of three programs to appropriate find gap words and distrac
 
 * [`GapWordAndDistractorSelection`](../src/main/scala/agfqg/GapWordAndDistractorSelection.scala): Topic-weighted word vector method for gap-word selection.
 * [`VocabFilterGapWordAndDistractorSelection`](../src/main/scala/agfqg/VocabFilterGapWordAndDistractorSelection.scala): + limits distractors to within-corpus-vocabulary.
-* [`NlpAwareGapWordAndDistractorSelection`](../src/main/scala/agfqg/NlpAwareGapWordAndDistractorSelection.scala): + limits gap-words and distractors based upon part-of-speech relationships.
+* [`NlpAwareGapWordAndDistractorSelection`](../src/main/scala/agfqg/NlpAwareGapWordAndDistractorSelection.scala): + limits gap-words, distractors with POS rules
 
-All programs find gap words by choosing the word in each sentence whose word vector is closest to the weighted sum of the top 3 topic vectors for the sentence. Only the third program, `NlpAwareGapWordAndDistractorSelection`, restricts gap words to have a noun or verb part-of-speech tag.
+All programs find gap words by choosing the word in each sentence whose word vector is closest to the weighted sum of the top 3 topic vectors for the sentence. Only the third program, `NlpAwareGapWordAndDistractorSelection`, restricts gap words to have a noun or verb part-of-speech (POS) tag.
 
 Additionally, all programs find distractors by choosing words that are close to both the gap word vector as well as to the weighted sentence topic vector. However, the 2nd program, `VocabFilterGapWordAndDistractorSelection`, as well as the 3rd program, restricts distractors to words that occur in the corpus only. The 1st program allows any word from the larger corpus of learned word vectors.
 
