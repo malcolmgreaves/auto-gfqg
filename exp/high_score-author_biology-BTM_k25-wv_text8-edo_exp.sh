@@ -22,5 +22,5 @@ echo "This lets you see the actual, original sentences."
 echo ""
 echo "And then view the generated questions, selected gap-word, and selected distractors"
 echo ""
-echo example file is: output/high_score-author_biology-BTM_k25-wv_text8/selected_sentences-author_biology_lemma_nostop-BTM_k25-score_0.41"
+echo "example file is: output/high_score-author_biology-BTM_k25-wv_text8/selected_sentences-author_biology_lemma_nostop-BTM_k25-score_0.41"
 
