@@ -17,12 +17,14 @@ cd stanford-corenlp-full-2016-10-31
 Execute the following from within the recently downloaded corenlp directory (e.g. `stanford-corenlp-full-2016-10-31`):
 
 ```
-TEXT_FI=$DEV/data/from_authors/biology.txt
+TEXT_FI=$DEV/auto-gfqg/data/from_authors/biology.txt
 java -cp "*" edu.stanford.nlp.pipeline.StanfordCoreNLP -annotators tokenize,ssplit,pos,lemma,ner -file $TEXT_FI -outputFormat conll
 ```
 
 This program outputs its results into a file in the local, current directory called `biology.txt.conll`. 
 
 ### NOTE
-Make sure that `DEV` is where you checked out this repository. Also, we recommend running with the following JVM flags: `-Xmx20g -XX:+UseG1GC -XX:+TieredCompilation -server -d64 -XX:+AggressiveOpts`. Additionally, we recommend using `time` to see how long it takes for this program to run on your machine.
 
+We recommend running with the following JVM flags: `-Xmx20g -XX:+UseG1GC -XX:+TieredCompilation -server -d64 -XX:+AggressiveOpts`. Additionally, we recommend using `time` to see how long it takes for this program to run on your machine.
+
+Additionally, make sure that `DEV` is where you checked out the `auto-gfqg` repository.
