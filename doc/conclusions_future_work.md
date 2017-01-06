@@ -10,13 +10,26 @@ For experimentation, we used the text of Campbel's Biology, 9th edition. Every s
 
 The learned BTM information is [here](../output/author_biology-BTM_topic_modeling/output). This directory contains the unique words in the corpus as well as all of the topic model parameters (located in the subdirectory `model/`).
 
-The selected sentences we generated in our experiments are [here](../output/author_biology-BTM_topic_modeling/selected_sentences-k25_topwords20_threshold0.4).
+The **selected sentences** we generated in our experiments are [here](../output/author_biology-BTM_topic_modeling/selected_sentences-k25_topwords20_threshold0.4). The format of this file is tab separated. Each line represents a different scored sentence. In order, the fields are:
 
-Our experimental results, i.e. generated questions from this biology corpus, are here:
+1. The first field is the global sentence index.
+2. The second field is the score produced by the sentence scoring algorithm.
+3. The third field is the top topics that are represented in the sentence. These topic indicies are space-separated.
+4. The foruth and final field is the original, word-for-word text of the sentence.
+
+**Our experimental results**, i.e. **generated questions** with selected **gap word** and **distractors** from this biology corpus, are here:
 * [Distractors can be any word from the larger word2vec corpus.](../output/author_biology-BTM_topic_modeling/baseline-no_nlp-no_vocab_filter/ORIGINAL-complete_questions-gap_and_distractors)
 * [Distractors must be words from the original biology corpus.](../output/author_biology-BTM_topic_modeling/vocab_filter/VOCAB_FILTERED-complete_questions-gap_and_distractors)
 * [Distractors must also have their part-of-speech tags align with the chosen gap word, which must be a noun or verb.](../output/author_biology-BTM_topic_modeling/nlp_and_vocab_filter/NLP-complete_questions-gap_and_distractors)
 
+The format of these files is tab separated. Each line represents a different generated question. In order, the fields are:
+
+1. The first field is the global sentence index.
+2. The second field is the selected gap word. 
+3. The third field is a space separated start and end index of the gap word within the original sentence.
+4. The fourth and final field is the generated distractors, separated by spaces.
+
+Note that all indices  in this project (sentence, character, topic, etc.) are zero-indexed.
 
 ### Future Work
 
