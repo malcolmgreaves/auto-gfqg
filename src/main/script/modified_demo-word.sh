@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # DEV is the directory where all of your projects are
 cd $DEV
 
