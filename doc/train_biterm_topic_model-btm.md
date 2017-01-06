@@ -48,7 +48,5 @@ After executing, the `output` directory in the root of the `BTM` repository will
 
 The `voca.txt` file consists of every unique word in the corpus and the `doc_wids.txt` file consists of indicies of all words that occur in each sentence.
 
-Note that sentences are treated as each line of text in the original input file. In our case, this file is `$DEV/data/from_authors/biology-sentence_per_line-lematized_no_stopwords`.
-
 ### NOTE
 Make sure that `DEV` is where you checked out the `auto-gfqg` and `BTM` repositories.
