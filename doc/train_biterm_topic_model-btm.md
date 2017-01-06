@@ -17,53 +17,28 @@ Given the fact that the BTM code is readily available and is well-suited to topi
 ### Commands
 
 In order to re-train the topic model as it's used in this project, do the following:
+
+First, clone the `BTM` repo:
 ```
 git clone git@github.com:xiaohuiyan/BTM.git
-cd BTM/script
+```
 
-#
-# this is a modified version of the "runExample.sh" script
-#
+Second, copy the `biology.txt` file to the `BTM/sample-data/` directory unde the name of `doc_info.txt`:
 
-K=25   # number of topics
+```
+cp $DEV/auto-gfqg/data/from_authors/biology.txt $DEV/BTM/sample-data/doc_info.txt
+```
 
-alpha=`echo "scale=3;50/$K"|bc`
-beta=0.005
-niter=250
-save_step=501
+Third, modify the `runExample.sh` script such that `K=25`. This BASH command will do the trick:
 
-input_dir=../sample-data/
-output_dir=../output/
-model_dir=${output_dir}model/
-mkdir -p $output_dir/model 
+```
+sed -i 's/K=50/K=25/g' $DEV/BTM/script/runExample.sh
+```
 
-# the input docs for training
-#doc_pt=${input_dir}doc_info.txt
-doc_pt=$DEV/data/from_authors/biology-sentence_per_line-lematized_no_stopwords
-
-echo "=============== Index Docs ============="
-# docs after indexing
-dwid_pt=${output_dir}doc_wids.txt
-# vocabulary file
-voca_pt=${output_dir}voca.txt
-python indexDocs.py $doc_pt $dwid_pt $voca_pt
-
-## learning parameters p(z) and p(w|z)
-echo "=============== Topic Learning ============="
-W=`wc -l < $voca_pt` # vocabulary size
-make -C ../src
-echo "../src/btm est $K $W $alpha $beta $niter $save_step $dwid_pt $model_dir"
-../src/btm est $K $W $alpha $beta $niter $save_step $dwid_pt $model_dir
-
-## infer p(z|d) for each doc
-echo "================ Infer P(z|d)==============="
-echo "../src/btm inf sum_b $K $dwid_pt $model_dir"
-../src/btm inf sum_b $K $dwid_pt $model_dir
-
-## output top words of each topic
-echo "================ Topic Display ============="
-python topicDisplay.py $model_dir $K $voca_pt
-
+Finally, to execute the script, move into the `script/` directory:
+```
+cd $DEV/BTM/script/
+time ./runExample.sh
 ```
 
 After executing, the `output` directory in the root of the `BTM` repository will have all relevant information. Importantly, the learned model parameters are in `output/model/` as the files:
@@ -76,4 +51,4 @@ The `voca.txt` file consists of every unique word in the corpus and the `doc_wid
 Note that sentences are treated as each line of text in the original input file. In our case, this file is `$DEV/data/from_authors/biology-sentence_per_line-lematized_no_stopwords`.
 
 ### NOTE
-Make sure that `DEV` is where you checked out this (`auto-gfqg`) repository.
+Make sure that `DEV` is where you checked out the `auto-gfqg` and `BTM` repositories.
