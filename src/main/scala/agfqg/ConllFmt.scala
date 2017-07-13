@@ -27,18 +27,18 @@ object ConllFmt {
 
         var indexOfLastSentenceEnd: Int = 0
         var indexOfNextSentenceEnd: Int = text.indexOf("\n\n", 0)
-        var active: Boolean = indexOfLastSentenceEnd >= 0
+
+        def isActive() = indexOfLastSentenceEnd >= 0
 
         def advance(): Unit =
-          if (active) {
+          if (isActive()) {
             indexOfLastSentenceEnd = indexOfNextSentenceEnd
             indexOfNextSentenceEnd =
               text.indexOf("\n\n", indexOfLastSentenceEnd + 1)
-            active = indexOfLastSentenceEnd >= 0
           }
 
         override def hasNext: Boolean =
-          active && indexOfLastSentenceEnd >= 0
+          isActive()
 
         override def next(): ConllSent = {
 
@@ -47,8 +47,12 @@ object ConllFmt {
               .slice(indexOfLastSentenceEnd, indexOfNextSentenceEnd)
               .trim
               .split("\n")
-              .filter { _.nonEmpty }
-              .map { parseConllWord }
+              .filter {
+                _.nonEmpty
+              }
+              .map {
+                parseConllWord
+              }
               .toSeq
           )
 
@@ -59,27 +63,6 @@ object ConllFmt {
       }
     }
 
-  def main(args: Array[String]): Unit = {
-    val fi = new File(args.head)
-    ConllFmt
-      .reader(fi)
-      .fold(
-        e => throw e,
-        iter => {
-          val all = iter.toSeq
-          System.err.println(s"Found ${all.size} sentences in Conll Formatted file: $fi")
-          all.take(10).foreach { x =>
-            x.tokens.map { _.raw }.mkString("\n")
-
-            // TODO: change so it outputs the sentence in a single line !
-
-            val s = x.tokens.mkString("\n")
-            println(s"\n$s\n")
-          }
-        }
-      )
-  }
-
 }
 
 case class ConllWord(
@@ -89,9 +72,4 @@ case class ConllWord(
     neTag: String
 )
 
-case class ConllSent(tokens: Seq[ConllWord]) {
-  def text: String =
-    tokens.map { c =>
-      c.raw
-    }.mkString(" ")
-}
+case class ConllSent(tokens: Seq[ConllWord])
