@@ -67,8 +67,12 @@ object ConllFmt {
         e => throw e,
         iter => {
           val all = iter.toSeq
-          println(s"Found ${all.size} sentences in Conll Formatted file: $fi")
+          System.err.println(s"Found ${all.size} sentences in Conll Formatted file: $fi")
           all.take(10).foreach { x =>
+            x.tokens.map { _.raw }.mkString("\n")
+
+            // TODO: change so it outputs the sentence in a single line !
+
             val s = x.tokens.mkString("\n")
             println(s"\n$s\n")
           }
