@@ -9,16 +9,6 @@ import scalaz.\/
 
 object ConllFmt {
 
-  def parseConllWord(line: String): ConllWord = {
-    val bits = line.split("\t")
-    ConllWord(
-      raw = bits(1),
-      lemmatized = bits(2),
-      posTag = bits(3),
-      neTag = bits(4)
-    )
-  }
-
   /** Produces an Iterator with **MUTABLE INTERNAL STATE** Not threadsafe!. */
   def reader(fi: File): Err[Iterator[ConllSent]] =
     \/.fromTryCatchNonFatal {
@@ -63,7 +53,27 @@ object ConllFmt {
       }
     }
 
+  def parseConllWord(line: String): ConllWord = {
+    val bits = line.split("\t")
+    ConllWord(
+      raw = bits(1),
+      lemmatized = bits(2),
+      posTag = bits(3),
+      neTag = bits(4)
+    )
+  }
+
+  def writeConllSent(s: ConllSent): String =
+    s.tokens.zipWithIndex.map {
+      case (w, index) => s"$index\t${writeConllWord(w)}"
+    }.mkString("\n") + "\n"
+
+  def writeConllWord(w: ConllWord): String =
+    s"${w.raw}\t${w.lemmatized}\t${w.posTag}\t${w.neTag}"
+
 }
+
+case class ConllSent(tokens: Seq[ConllWord])
 
 case class ConllWord(
     raw: String,
@@ -71,5 +81,3 @@ case class ConllWord(
     posTag: String,
     neTag: String
 )
-
-case class ConllSent(tokens: Seq[ConllWord])
