@@ -1,5 +1,7 @@
 package agfqg
 
+import agfqg.SelectSentencesForQuestions.SelectedSentence
+
 import java.io.{BufferedWriter, File, FileWriter}
 
 import cmd.RunnerHelpers.log
@@ -73,7 +75,7 @@ object FinalQuizQuestionsJson {
       case GapAndDistractors(index, gap, gapCharacterIndicies, distractors) =>
         val selectedSentence = selectedSentences(index)
         val (formattedQuizText, newEndIndex) =
-          gapReplace(selectedSentence.text, gapCharacterIndicies)
+          gapReplace(SentenceText(selectedSentence.text), gapCharacterIndicies)
         FormattedQuiz(
           index = index,
           questionText = formattedQuizText,
@@ -97,8 +99,8 @@ object FinalQuizQuestionsJson {
     SelectedSentence(
       index = bits.head.toInt,
       score = bits(1).toDouble,
-      topTopics = bits(2).split(" "),
-      text = bits(3)
+      topTopics = bits(2).split(" ").map {_.toInt }.toSeq,
+      text = SentenceText(bits(3))
     )
   }
 
@@ -135,13 +137,6 @@ object FinalQuizQuestionsJson {
   }
 
 }
-
-case class SelectedSentence(
-    index: Int,
-    score: Double,
-    topTopics: Seq[String],
-    text: String
-)
 
 case class GapAndDistractors(
     index: Int,
