@@ -6,6 +6,9 @@ import cmd.RunnerHelpers.log
 
 import scala.io.Source
 
+import rapture.json._
+import jsonBackends.jawn._
+
 object FinalQuizQuestionsJson {
 
   lazy val argHelp: Array[String] => Boolean =
@@ -34,8 +37,19 @@ object FinalQuizQuestionsJson {
     log(s"Output, JSON formatted, complete, quiz questions: $outFi")
 
     val qus = quizes(selectSentFi, gapDistractorFi)
+    log(s"Assembled ${qus.size} quizzes.")
+    writeAsJson(outFi, qus)
+  }
 
-    ???
+  def writeAsJson(out: File, quizzes: Iterable[FormattedQuiz]): Unit = {
+    val w = new BufferedWriter(new FileWriter(out))
+    try {
+      val j = Json(quizzes.toIndexedSeq)
+      import formatters.compact._
+      w.write(Json.format(j))
+    } finally {
+      w.close()
+    }
   }
 
   def quizes(selectSentFi: File,
