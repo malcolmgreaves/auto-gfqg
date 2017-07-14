@@ -278,11 +278,6 @@ object ImprovedGapWordAndDistractorSelection {
         nearlyDone
     }
 
-    log("Final chunks")
-    log(chunked.mkString("\n"))
-    System.err.flush()
-    log("")
-
     val gapCandidatesByDist =
       chunked.flatMap {
         case (c, itsStartingIndex) =>
