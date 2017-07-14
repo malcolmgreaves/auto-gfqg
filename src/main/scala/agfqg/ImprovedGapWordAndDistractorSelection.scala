@@ -6,12 +6,12 @@ import agfqg.CreateTopicWordVecs._
 
 import scala.io.Source
 
-object VocabFilterGapWordAndDistractorSelection {
+object ImprovedGapWordAndDistractorSelection {
 
-  import cmd.RunnerHelpers._
-  import sutils.fp.ImplicitDisjunctionOps._
   import AppHelpers._
   import agfqg.GapWordAndDistractorSelection._
+  import cmd.RunnerHelpers._
+  import sutils.fp.ImplicitDisjunctionOps._
 
   def main(args: Array[String]): Unit = {
     val nExpectedArgs = 5
