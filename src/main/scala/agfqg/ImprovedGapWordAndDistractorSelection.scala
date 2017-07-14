@@ -253,20 +253,21 @@ object ImprovedGapWordAndDistractorSelection {
       val (nearlyDone, lastCurrent) =
         tokens.foldLeft(
           (List.empty[(ConllWord, Int)], List.empty[(ConllWord, Int)])) {
-          case ((doneChunking, currentChunking), (word, itsStartingIndex)) =>
+          case ((doneChunking, currentChunking),
+                curr @ (word, itsStartingIndex)) =>
             val accept: Boolean = {
               val isNoun = nounPosTags.contains(word.posTag)
               isNoun && acceptStr(s.simplify(word.raw.toLowerCase))
             }
 
             if (accept)
-              (doneChunking, currentChunking :+ (word, itsStartingIndex))
+              (doneChunking, currentChunking :+ curr)
             else
               (
                 if (currentChunking.nonEmpty)
-                  doneChunking :+ chunk(currentChunking) :+ (word, itsStartingIndex)
+                  doneChunking :+ chunk(currentChunking) :+ curr
                 else
-                  doneChunking :+ (word, itsStartingIndex),
+                  doneChunking :+ curr,
                 List.empty
               )
         }
