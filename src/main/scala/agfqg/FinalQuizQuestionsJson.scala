@@ -99,7 +99,7 @@ object FinalQuizQuestionsJson {
     SelectedSentence(
       index = bits.head.toInt,
       score = bits(1).toDouble,
-      topTopics = bits(2).split(" ").map {_.toInt }.toSeq,
+      topTopics = bits(2).split(" ").map { _.toInt }.toSeq,
       text = SentenceText(bits(3))
     )
   }
