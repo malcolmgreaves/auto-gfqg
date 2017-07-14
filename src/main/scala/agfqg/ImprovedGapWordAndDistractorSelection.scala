@@ -231,7 +231,7 @@ object ImprovedGapWordAndDistractorSelection {
     val gapCandidatesByDist =
       tokens.flatMap {
         case (c, itsStartingIndex) =>
-          if (okPosTagsForGapOrDistractor.contains(c.posTag)) {
+          if (nounPosTags.contains(c.posTag)) {
             val word = s.simplify(c.raw.toLowerCase)
             val isUnique = !wordsThatOccurMoreThanOnceInSentence.contains(word)
             val isStop = stopWords.contains(word)
