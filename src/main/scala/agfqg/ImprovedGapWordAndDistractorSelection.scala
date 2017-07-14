@@ -228,61 +228,103 @@ object ImprovedGapWordAndDistractorSelection {
         .map { case (word, _) => word }
         .toSet
 
+    def acceptStr(word: String): Boolean = {
+      val isUnique = !wordsThatOccurMoreThanOnceInSentence.contains(word)
+      val isStop = stopWords.contains(word)
+      isUnique && !isStop
+    }
+
     val chunked: Seq[(ConllWord, Int)] = {
 
-      def chunk(currentChunking: Seq[ConllWord]): ConllWord =
-        ConllWord(
-          raw = currentChunking.map { _.raw }.mkString(" "),
-          lemmatized = currentChunking.map { _.lemmatized }.mkString(" "),
-          posTag = currentChunking.head.posTag,
-          neTag = currentChunking.head.neTag
+      def chunk(currentChunking: Seq[(ConllWord, Int)]): (ConllWord, Int) = {
+        val chunkedWord = ConllWord(
+          raw = currentChunking.map { _._1.raw }.mkString(" "),
+          lemmatized = currentChunking.map { _._1.lemmatized }.mkString(" "),
+          posTag = currentChunking.head._1.posTag,
+          neTag = currentChunking.head._1.neTag
         )
+        val firstStartingIndex = currentChunking.head._2
+        (
+          chunkedWord,
+          firstStartingIndex + chunkedWord.raw.length
+        )
+      }
 
       val (nearlyDone, lastCurrent) =
-        tokens.foldLeft((List.empty[ConllWord], List.empty[ConllWord])) {
-          case ((doneChunking, currentChunking), (word, _)) =>
+        tokens.foldLeft(
+          (List.empty[(ConllWord, Int)], List.empty[(ConllWord, Int)])) {
+          case ((doneChunking, currentChunking), (word, itsStartingIndex)) =>
             val accept: Boolean = {
               val isNoun = nounPosTags.contains(word.posTag)
-              val wordText = s.simplify(word.raw.toLowerCase)
-              val isUnique =
-                !wordsThatOccurMoreThanOnceInSentence.contains(wordText)
-              val isStop = stopWords.contains(wordText)
-              isNoun && isUnique && !isStop
+              isNoun && acceptStr(s.simplify(word.raw.toLowerCase))
             }
 
             if (accept)
-              (doneChunking, currentChunking :+ word)
+              (doneChunking, currentChunking :+ (word, itsStartingIndex))
             else
               (
                 if (currentChunking.nonEmpty)
-                  doneChunking :+ chunk(currentChunking) :+ word
+                  doneChunking :+ chunk(currentChunking) :+ (word, itsStartingIndex)
                 else
-                  doneChunking :+ word,
+                  doneChunking :+ (word, itsStartingIndex),
                 List.empty
               )
         }
 
-      val finalChunks =
-        if (lastCurrent.nonEmpty)
-          nearlyDone :+ chunk(lastCurrent)
-        else
-          nearlyDone
-
-      finalChunks.zipWithIndex
+      if (lastCurrent.nonEmpty)
+        nearlyDone :+ chunk(lastCurrent)
+      else
+        nearlyDone
     }
+
+    log("Final chunks")
+    log(chunked.mkString("\n"))
+    System.err.flush()
+    log("")
 
     val gapCandidatesByDist =
       chunked.flatMap {
         case (c, itsStartingIndex) =>
           if (nounPosTags.contains(c.posTag)) {
-            val word = s.simplify(c.raw.toLowerCase)
-            val isUnique = !wordsThatOccurMoreThanOnceInSentence.contains(word)
-            val isStop = stopWords.contains(word)
 
-            if (isUnique && !isStop)
-              stemmedWord2vec.get(word).map { vec =>
+            lazy val simplifiedWord = s.simplify(c.raw.toLowerCase)
+
+            val mwe = c.raw.split(" ")
+            val isMwe = mwe.length > 1
+
+            val accept =
+              if (isMwe)
+                mwe.map { _.toLowerCase }.map { s.simplify }.foldLeft(true) {
+                  case (a, word) => a && acceptStr(word)
+                } else
+                acceptStr(simplifiedWord)
+
+            if (mwe.nonEmpty && accept) {
+
+              val maybeVec =
+                if (isMwe) {
+                  val mweVecs = mwe.flatMap { stemmedWord2vec.get }
+                  mweVecs.length match {
+                    case 0 => None
+                    case 1 => Some(mweVecs.head)
+                    case _ =>
+                      Some {
+                        mweVecs
+                          .slice(1, mweVecs.length)
+                          .foldLeft(mweVecs.head) {
+                            case (accumV, v) =>
+                              accumV + v
+                          }
+                      }
+                  }
+                } else
+                  stemmedWord2vec.get(simplifiedWord)
+
+              maybeVec.map { vec =>
                 (c, itsStartingIndex, vec)
-              } else
+              }
+
+            } else
               None
           } else
             None
