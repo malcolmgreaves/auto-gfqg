@@ -228,8 +228,51 @@ object ImprovedGapWordAndDistractorSelection {
         .map { case (word, _) => word }
         .toSet
 
+    val chunked: Seq[(ConllWord, Int)] = {
+
+      def chunk(currentChunking: Seq[ConllWord]): ConllWord =
+        ConllWord(
+          raw = currentChunking.map { _.raw }.mkString(" "),
+          lemmatized = currentChunking.map { _.lemmatized }.mkString(" "),
+          posTag = currentChunking.head.posTag,
+          neTag = currentChunking.head.neTag
+        )
+
+      val (nearlyDone, lastCurrent) =
+        tokens.foldLeft((List.empty[ConllWord], List.empty[ConllWord])) {
+          case ((doneChunking, currentChunking), (word, _)) =>
+            val accept: Boolean = {
+              val isNoun = nounPosTags.contains(word.posTag)
+              val wordText = s.simplify(word.raw.toLowerCase)
+              val isUnique =
+                !wordsThatOccurMoreThanOnceInSentence.contains(wordText)
+              val isStop = stopWords.contains(wordText)
+              isNoun && isUnique && !isStop
+            }
+
+            if (accept)
+              (doneChunking, currentChunking :+ word)
+            else
+              (
+                if (currentChunking.nonEmpty)
+                  doneChunking :+ chunk(currentChunking) :+ word
+                else
+                  doneChunking :+ word,
+                List.empty
+              )
+        }
+
+      val finalChunks =
+        if (lastCurrent.nonEmpty)
+          nearlyDone :+ chunk(lastCurrent)
+        else
+          nearlyDone
+
+      finalChunks.zipWithIndex
+    }
+
     val gapCandidatesByDist =
-      tokens.flatMap {
+      chunked.flatMap {
         case (c, itsStartingIndex) =>
           if (nounPosTags.contains(c.posTag)) {
             val word = s.simplify(c.raw.toLowerCase)
