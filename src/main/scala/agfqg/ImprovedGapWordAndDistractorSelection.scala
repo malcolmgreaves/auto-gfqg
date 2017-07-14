@@ -283,24 +283,6 @@ object ImprovedGapWordAndDistractorSelection {
             case (distractorCandidate, _) =>
               -lm.probabilityOf(recombineForGap(distractorCandidate))
           }.take(nDistractors).map { case (distractor, _) => distractor }
-
-          //          val distractorCandidatesCloseToGap = wordVectors.filter {
-          //            case (word, _) =>
-          //              val notInSentence = !sentenceWords.contains(word)
-          //              val okPosTag = posTagsOfWord.get(word).exists {
-          //                _.contains { gapWord.posTag }
-          //              }
-          //
-          //              notInSentence && okPosTag
-          //
-          //          }.sortBy {
-          //            case (_, vec) =>
-          //              -d.distance(combinedReWeightedGapSentTopicVec, vec)
-          //          }.map { case (word, _) => word }.take(math.max(nDistractors, 50))
-          //
-          //          distractorCandidatesCloseToGap.sortBy { distractorCandidate =>
-          //            -lm.probabilityOf(recombineForGap(distractorCandidate))
-          //          }.take(nDistractors)
         }
 
         if (distractors.nonEmpty)
