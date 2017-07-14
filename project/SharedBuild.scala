@@ -14,6 +14,7 @@ object SharedBuild {
   lazy val silencerV   = "0.5"
   lazy val sistaV      = "6.0.1"
   lazy val coreNlpV    = "3.6.0"
+  lazy val raptureV    = "2.0.0-M7"
   lazy val langDtV     = "1.1.1"
 
   // // // // // // // // // //
@@ -32,6 +33,7 @@ object SharedBuild {
    "edu.stanford.nlp" % "stanford-corenlp" % coreNlpV,
    "edu.stanford.nlp" % "stanford-parser"  % coreNlpV,
    "io.malcolmgreaves" %% "cybozu-language-detection" % langDtV,
+   "com.propensive"         %% "rapture"       % raptureV,
     // [BEGIN] PUBLISHED LOCAL
     "io.malcolmgreaves" %% "fp4ml-spark" % fp4mlV,
     // ^^ includes all of below:
