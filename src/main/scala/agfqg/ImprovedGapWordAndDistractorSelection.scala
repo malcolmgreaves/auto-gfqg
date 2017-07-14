@@ -244,17 +244,13 @@ object ImprovedGapWordAndDistractorSelection {
           neTag = currentChunking.head._1.neTag
         )
         val firstStartingIndex = currentChunking.head._2
-        (
-          chunkedWord,
-          firstStartingIndex + chunkedWord.raw.length
-        )
+        (chunkedWord, firstStartingIndex)
       }
 
       val (nearlyDone, lastCurrent) =
         tokens.foldLeft(
           (List.empty[(ConllWord, Int)], List.empty[(ConllWord, Int)])) {
-          case ((doneChunking, currentChunking),
-                curr @ (word, itsStartingIndex)) =>
+          case ((doneChunking, currentChunking), curr @ (word, _)) =>
             val accept: Boolean = {
               val isNoun = nounPosTags.contains(word.posTag)
               isNoun && acceptStr(s.simplify(word.raw.toLowerCase))

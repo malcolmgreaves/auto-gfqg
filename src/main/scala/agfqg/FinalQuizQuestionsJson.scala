@@ -129,11 +129,18 @@ object FinalQuizQuestionsJson {
                  replacement: String = "_____"): (String, Int) = {
     val (start, end) = gapCharacterIndicies
     val upToBeforeStart = text.substring(0, start)
-    val atAndAfterEnd = text.substring(end)
-    (
-      s"$upToBeforeStart$replacement$atAndAfterEnd",
-      start + replacement.length
-    )
+    try {
+      val atAndAfterEnd = text.substring(end)
+      (
+        s"$upToBeforeStart$replacement$atAndAfterEnd",
+        start + replacement.length
+      )
+    } catch {
+      case e: Throwable =>
+        log("")
+        throw e
+    }
+
   }
 
 }
