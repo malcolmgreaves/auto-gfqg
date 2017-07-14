@@ -33,16 +33,22 @@ package object agfqg {
     @inline def unwrap: D_ = Distribution(x)
   }
 
-  val okPosTagsForGapOrDistractor: Set[String] = """NN
-      NNP
-      NNPS
-      NNS
-      VB
-      VBD
-      VBG
-      VBN
-      VBP
-      VBZ""".trim.split("\n").toSet
+  val nounPosTags: Set[String] =
+    """NN
+      |NNP
+      |NNPS
+      |NNS""".stripMargin.trim.split("\n").toSet
+
+  val verbPosTags: Set[String] =
+    """VB
+      |VBD
+      |VBG
+      |VBN
+      |VBP
+      |VBZ""".stripMargin.trim.split("\n").toSet
+
+  val okPosTagsForGapOrDistractor: Set[String] =
+    nounPosTags ++ verbPosTags
 
   /** Set of lower-cased Strings that are known stop words. From ranks.nl" */
   val stopWords: Set[String] =
@@ -400,7 +406,6 @@ package object agfqg {
     |omitted
     |on
     |once
-    |one
     |ones
     |only
     |onto
@@ -608,7 +613,6 @@ package object agfqg {
     |trying
     |ts
     |twice
-    |two
     |u
     |un
     |under
@@ -702,13 +706,16 @@ package object agfqg {
     |yet
     |you
     |youd
+    |you'd
+    |youll
     |you'll
     |your
     |youre
+    |you're
     |yours
     |yourself
     |yourselves
+    |youve
     |you've
-    |z
-    |zero""".stripMargin.split("\n").toSet
+    |z""".stripMargin.split("\n").toSet
 }
