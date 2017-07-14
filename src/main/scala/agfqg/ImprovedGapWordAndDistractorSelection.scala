@@ -138,17 +138,17 @@ object ImprovedGapWordAndDistractorSelection {
   }
 
   case class SelectedScoredConllSentence(
-                                          index: Int,
-                                          score: Double,
-                                          topTopics: Seq[Int],
-                                          sentence: ConllSent,
-                                          text: String
-                                        )
+      index: Int,
+      score: Double,
+      topTopics: Seq[Int],
+      sentence: ConllSent,
+      text: String
+  )
 
   def readSelectedConllSentences(
-                                  selectedScoredSentecnes: File,
-                                  conllFmtSentencesFi: File
-                                ): Err[Iterator[SelectedScoredConllSentence]] =
+      selectedScoredSentecnes: File,
+      conllFmtSentencesFi: File
+  ): Err[Iterator[SelectedScoredConllSentence]] =
     \/.fromTryCatchNonFatal {
 
       val mkIter4Scored =
@@ -186,15 +186,15 @@ object ImprovedGapWordAndDistractorSelection {
   val (wGapVecNlp, wSentTopicVecNlp) = (wGapVecNormal, wSentTopicVecNormal)
 
   def selectGapAndDistractorsConll(
-                                    s: WordSimplifier,
-                                    d: Distance,
-                                    stemmedWord2vec: Map[String, Vec],
-                                    topicVectors: IndexedSeq[Vec],
-                                    lm: LanguageModel,
-                                    wordVectors: Seq[(String, Vec)],
-                                    posTagsOfWord: Map[String, Set[String]],
-                                    nDistractors: Int
-                                  )(sent: SelectedScoredConllSentence): Option[BothGapDistractors] = {
+      s: WordSimplifier,
+      d: Distance,
+      stemmedWord2vec: Map[String, Vec],
+      topicVectors: IndexedSeq[Vec],
+      lm: LanguageModel,
+      wordVectors: Seq[(String, Vec)],
+      posTagsOfWord: Map[String, Set[String]],
+      nDistractors: Int
+  )(sent: SelectedScoredConllSentence): Option[BothGapDistractors] = {
 
     val weightedSentenceTopicVector: Vec =
       sent.topTopics.map { topicVectors.apply }
