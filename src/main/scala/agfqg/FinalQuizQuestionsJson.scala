@@ -72,11 +72,13 @@ object FinalQuizQuestionsJson {
     gapAndDistractors.toList.sortBy { _.index }.map {
       case GapAndDistractors(index, gap, gapCharacterIndicies, distractors) =>
         val selectedSentence = selectedSentences(index)
-        val formattedQuizText =
+        val (formattedQuizText, newEndIndex) =
           gapReplace(selectedSentence.text, gapCharacterIndicies)
         FormattedQuiz(
           index = index,
           questionText = formattedQuizText,
+          replacementStartIndex = gapCharacterIndicies._1,
+          replacementEndIndex = newEndIndex,
           answer = gap,
           distractors = distractors
         )
@@ -122,11 +124,14 @@ object FinalQuizQuestionsJson {
 
   def gapReplace(text: String,
                  gapCharacterIndicies: (Int, Int),
-                 replacement: String = "_____"): String = {
+                 replacement: String = "_____"): (String, Int) = {
     val (start, end) = gapCharacterIndicies
     val upToBeforeStart = text.substring(0, start)
     val atAndAfterEnd = text.substring(end)
-    s"$upToBeforeStart$replacement$atAndAfterEnd"
+    (
+      s"$upToBeforeStart$replacement$atAndAfterEnd",
+      start + replacement.length
+    )
   }
 
 }
@@ -148,6 +153,8 @@ case class GapAndDistractors(
 case class FormattedQuiz(
     index: Int,
     questionText: String,
+    replacementStartIndex: Int,
+    replacementEndIndex: Int,
     answer: String,
     distractors: Seq[String]
 )
