@@ -53,17 +53,93 @@ object ConllToTextLine {
     }
   }
 
-  def asOneLine(sentence: ConllSent): String =
-    if (sentence.tokens.isEmpty)
-      ""
-    else {
-      val rawWords = sentence.tokens.map { _.raw }
-      val rws =
-        if (rawWords.last == ".")
-          rawWords.slice(0, rawWords.size - 1)
-        else
-          rawWords
-      s"""${rws.mkString(" ")}."""
+  lazy val asOneLine: ConllSent => String = {
+    val pipeline = (getWordsAsStrings _)
+      .andThen(transformSpecialTokens)
+      .andThen(mergeTokens)
+      .andThen(properSpacing)
+      .andThen(finalStringification)
+
+    sentence =>
+      if (sentence.tokens.isEmpty)
+        ""
+      else
+        pipeline(sentence)
+  }
+
+  def getWordsAsStrings(s: ConllSent): Seq[String] =
+    s.tokens.map { _.raw }
+
+  lazy val transformSpecialTokens: Seq[String] => Seq[String] = {
+    val specialTransformTo = Map(
+      "-LRB-" -> "(",
+      "-RRB-" -> ")",
+      "-LSB-" -> "[",
+      "-RSB-" -> "]",
+      "-LCB-" -> "{",
+      "-RCB-" -> "}"
+    )
+
+    _.map { raw =>
+      specialTransformTo.getOrElse(raw, raw)
     }
+  }
+
+  lazy val mergeTokens: Seq[String] => Seq[String] = {
+
+    def tokenPairMergeTest(current: String, next: String): Boolean =
+      next == """n't""" || next == """'s""" ||
+        current == "(" || current == "[" || current == "{"
+
+    raws =>
+      raws.zipWithIndex
+        .foldLeft((List.empty[String], false)) {
+          case ((s, justMerged), (raw, index)) =>
+            val nextIndex = index + 1
+
+            if (justMerged) {
+              // we just merged our current `raw` with the previous one,
+              // --> skip
+              (s, false)
+
+            } else if (nextIndex < raws.size && tokenPairMergeTest(
+                         raw,
+                         raws(nextIndex))) {
+              (s :+ s"$raw${raws(nextIndex)}", true)
+
+            } else {
+              (s :+ raw, false)
+            }
+        }
+        ._1
+  }
+
+  lazy val properSpacing: Seq[String] => Seq[String] = {
+    val specialNoSepAfter = Set(",",
+                                """$""",
+                                ",",
+                                "?",
+                                "!",
+                                ".",
+                                """"""",
+                                "'",
+                                ")",
+                                // no left round, square, or curly brackets:
+                                // otherwise we'd have National Basketball Association( NBA)
+                                // when we want National Basketball Association (NBA)
+                                "]",
+                                "}",
+                                ":")
+
+    _.map { mappedWord =>
+      if (specialNoSepAfter.contains(mappedWord))
+        mappedWord
+      else
+        " " + mappedWord
+    }
+  }
+
+  def finalStringification(s: Seq[String]): String =
+    s.mkString("").trim
 
 }
