@@ -9,16 +9,6 @@ import scalaz.\/
 
 object ConllFmt {
 
-  def parseConllWord(line: String): ConllWord = {
-    val bits = line.split("\t")
-    ConllWord(
-      raw = bits(1),
-      lemmatized = bits(2),
-      posTag = bits(3),
-      neTag = bits(4)
-    )
-  }
-
   /** Produces an Iterator with **MUTABLE INTERNAL STATE** Not threadsafe!. */
   def reader(fi: File): Err[Iterator[ConllSent]] =
     \/.fromTryCatchNonFatal {
@@ -27,18 +17,18 @@ object ConllFmt {
 
         var indexOfLastSentenceEnd: Int = 0
         var indexOfNextSentenceEnd: Int = text.indexOf("\n\n", 0)
-        var active: Boolean = indexOfLastSentenceEnd >= 0
+
+        def isActive() = indexOfLastSentenceEnd >= 0
 
         def advance(): Unit =
-          if (active) {
+          if (isActive()) {
             indexOfLastSentenceEnd = indexOfNextSentenceEnd
             indexOfNextSentenceEnd =
               text.indexOf("\n\n", indexOfLastSentenceEnd + 1)
-            active = indexOfLastSentenceEnd >= 0
           }
 
         override def hasNext: Boolean =
-          active && indexOfLastSentenceEnd >= 0
+          isActive()
 
         override def next(): ConllSent = {
 
@@ -47,8 +37,12 @@ object ConllFmt {
               .slice(indexOfLastSentenceEnd, indexOfNextSentenceEnd)
               .trim
               .split("\n")
-              .filter { _.nonEmpty }
-              .map { parseConllWord }
+              .filter {
+                _.nonEmpty
+              }
+              .map {
+                parseConllWord
+              }
               .toSeq
           )
 
@@ -59,24 +53,27 @@ object ConllFmt {
       }
     }
 
-  def main(args: Array[String]): Unit = {
-    val fi = new File(args.head)
-    ConllFmt
-      .reader(fi)
-      .fold(
-        e => throw e,
-        iter => {
-          val all = iter.toSeq
-          println(s"Found ${all.size} sentences in Conll Formatted file: $fi")
-          all.take(10).foreach { x =>
-            val s = x.tokens.mkString("\n")
-            println(s"\n$s\n")
-          }
-        }
-      )
+  def parseConllWord(line: String): ConllWord = {
+    val bits = line.split("\t")
+    ConllWord(
+      raw = bits(1),
+      lemmatized = bits(2),
+      posTag = bits(3),
+      neTag = bits(4)
+    )
   }
 
+  def writeConllSent(s: ConllSent): String =
+    s.tokens.zipWithIndex.map {
+      case (w, index) => s"$index\t${writeConllWord(w)}"
+    }.mkString("\n") + "\n"
+
+  def writeConllWord(w: ConllWord): String =
+    s"${w.raw}\t${w.lemmatized}\t${w.posTag}\t${w.neTag}"
+
 }
+
+case class ConllSent(tokens: Seq[ConllWord])
 
 case class ConllWord(
     raw: String,
@@ -84,10 +81,3 @@ case class ConllWord(
     posTag: String,
     neTag: String
 )
-
-case class ConllSent(tokens: Seq[ConllWord]) {
-  def text: String =
-    tokens.map { c =>
-      c.raw
-    }.mkString(" ")
-}
