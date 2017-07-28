@@ -33,7 +33,7 @@ resolvers in ThisBuild := Seq(
 // runtime & compiliation
 
 lazy val javaV = "1.8"
-scalaVersion in ThisBuild := "2.11.8"
+scalaVersion in ThisBuild := "2.12.3"
 scalacOptions in ThisBuild := Seq(
   "-optimize",
   "-deprecation",
