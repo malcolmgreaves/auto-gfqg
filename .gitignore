@@ -1,5 +1,6 @@
 
 data/word_vectors/text8-vector.bin
+stanford-corenlp-full-2016-10-31
 
 index-*.html
 src/main/resources/tessdata
