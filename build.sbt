@@ -10,7 +10,7 @@ version in ThisBuild := {
 import SharedBuild._
 
 // dependencies
-
+enablePlugins(PackPlugin)
 addCompilerPlugin(scalaMacros)
 addCompilerPlugin(warningSilencer)
 
